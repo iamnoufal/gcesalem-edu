@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GCE Salem</title>
+    <link rel="stylesheet" href="index.css">
+
+</head>
+
+<body>
+    <script src="/__/firebase/8.3.0/firebase-app.js"></script>
+    <script src="/__/firebase/8.3.0/firebase-auth.js"></script>
+    <script src="/__/firebase/init.js"></script>
+    <script src="/__/firebase/8.3.0/firebase-firestore.js"></script>
+    <script src="index.js"></script>
+
+    <div id="top">
+        <div id="logo"><img src="gceLogo.jpeg" style="width:100%"></div>
+        <div id="nameDesk">Government College of Engineering, Salem</div>
+	<div id="nameMob">GCE Salem</div>
+    </div>
+    <div style="padding:2vw">
+        <p class="heading">Welcome to GCE Salem's Student Database</p>
+        <p>Information is wealth...</p>
+        <p>But these information are scattered around......</p>
+        <p>This Student Database gathers all the students information and make it availabe for the teachers to use wherever necessary which saves time which would be consumed if those information are collected manually.</p>
+        <p>Sign in with your Mail ID to get started.</p>
+    </div>
+    <div id="signin" onclick="googleSignIn()"><a href="">Sign in</a></div>
+    <p style="padding:2vw">Note: Please use the Mail ID which you are using for your classes. Please ensure that your name associated with that Mail ID is correct and accurate since we will use only the name coressponding to your Mail ID</p>
+
+</body>
+
+</html>

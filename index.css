@@ -1,0 +1,63 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 2vw;
+}
+
+a {
+    text-decoration: none;
+    color: inherit
+}
+
+.heading {
+    font-size: 3vw;
+}
+
+#top {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+}
+
+#top > div {
+    align-items: center;
+}
+
+#logo {
+    width:10%;
+    padding: 1vw
+}
+
+#nameDesk {
+    text-align: left;
+    display: block;
+    font-size: 2.7vw;
+    padding: 3vw 0vw;
+    width: 90%
+}
+
+#nameMob {
+    display: none;
+    font-size: 8vw;
+    width: 85%;
+    padding: 2vw
+}
+
+#signin {
+    background-color: black;
+    color: white;
+    padding: 1vw 2vw;
+    margin: 1vw 42vw;
+    text-align: center;
+}
+
+@media screen and (max-width:700px) {
+    body {font-size: 5vw;}
+    .heading{font-size:7vw}
+    #nameDesk {display:none}
+    #nameMob {display:block}
+    #logo {width: 15%}
+    #signin {margin: 0 35vw}
+}
