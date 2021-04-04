@@ -45,7 +45,7 @@ a {
     padding: 2vw
 }
 
-#signin {
+#block {
     background-color: black;
     color: white;
     padding: 1vw 2vw;
@@ -60,4 +60,5 @@ a {
     #nameMob {display:block}
     #logo {width: 15%}
     #signin {margin: 0 35vw}
+    #block {margin: 1vw 35vw; padding: 2vw 5vw}
 }

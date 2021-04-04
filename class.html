@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>GCE Salem</title>
+</head>
+
+<body>
+    <script src="/__/firebase/8.3.2/firebase-app.js"></script>
+    <script src="/__/firebase/8.3.2/firebase-auth.js"></script>
+    <script src="/__/firebase/8.3.2/firebase-firestore.js"></script>
+    <script src="index.js"></script>
+
+    <div id="top">
+        <div id="logo"><img src="gceLogo.jpeg" style="width:100%"></div>
+        <div id="nameDesk">Government College of Engineering, Salem</div>
+	<div id="nameMob">GCE Salem</div>
+    </div>
+    <div style="">
+        <div id="block" onclick="setDept('cse')"><a href="#">CSE</a></div>
+        <div id="block" onclick="setDept('ece')"><a href="#">ECE</a></div>
+        <div id="block" onclick="setDept('eee')"><a href="#">EEE</a></div>
+        <div id="block" onclick="setDept('civil')"><a href="#">Civil</a></div>
+        <div id="block" onclick="setDept('mech')"><a href="#">Mechanical</a></div>
+        <div id="block" onclick="setDept('metallurgy')"><a href="#">Metallurgy</a></div>
+    </div>
+
+    <script>
+	function setDept(dept) {
+	    if (userName!=null && year!=null) {
+	        localStorage.setItem("dept",dept);
+	        window.location.href="student_form.html";
+	    }
+	}
+    </script>
+</body>
+</html>
+    
