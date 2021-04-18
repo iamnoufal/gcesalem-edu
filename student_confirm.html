@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GCE Salem</title>
+    <link rel="stylesheet" href="index.css">
+
+</head>
+
+<body onload="showDetails()">
+    <script src="/__/firebase/8.3.0/firebase-app.js"></script>
+    <script src="/__/firebase/8.3.0/firebase-auth.js"></script>
+    <script src="/__/firebase/8.3.0/firebase-firestore.js"></script>
+    <script src="/__/firebase/init.js"></script>
+    <script src="pushtodb.js"></script>
+
+
+    <div id="top" class="fixed-top">
+		<div>
+		  <img id="logo" src="gceLogo.jpeg"/>
+		</div>
+		<div id="nameDesk">Government College of Engineering, Salem</div>
+	  </div>
+	<br><br><br><br><br>
+	<div class="container bg-light" style="display: flex; flex-direction: column;">
+		<div style="padding:2vw">
+			<h3 class="text-center">Student Registration:</h3>
+		<p class="text-center">Please confirm your details</p>
+		<table style="font-size:3vw;" class="table table-hover table-striped">
+			<tr><td><h6>Name:</h6></td><td><h6 id="name"></h6></td></tr>
+			<tr><td><h6>Father's Name:</h6></td><td><h6 id="fatherName"></h6></td></tr>
+			<tr><td><h6>Mother's Name:</h6></td><td><h6 id="motherName"></h6></td></tr>
+			<tr><td><h6>Date of birth:</h6></td><td><h6 id="dob"></h6></td></tr>
+			<tr><td><h6>Age:</h6></td><td><h6 id="age"></h6></td></tr>
+			<tr><td><h6>Gender:</h6></td><td><h6 id="gender"></h6></td></tr>
+			<tr><td><h6>Religion:</h6></td><td><h6 id="religion"></h6></td></td></tr>
+			<tr><td><h6>Catgory:</h6></td><td><h6 id="category"></h6></td></td></tr>
+			<tr><td><h6>Mobile Number</h6></td><td><h6 id="mobNo"></h6></td></td></tr>
+			<tr><td><h6>Address:</h6></td><td><h6 id="address"></h6></td></td></tr>
+			<tr><td><h6>District:</h6></td><td><h6 id="district"></h6></td></tr>
+			<tr><td><h6>State:</h6></td><td><h6 id="state"></h6></td></td></tr>
+			<tr><td><h6>Country:</h6></td><td><h6>India</h6></td></td></tr>
+			<tr><td><h6>Pin Code:</h6></td><td><h6 id="pinCode"></h6></td></tr>
+		</table>
+	</div>
+
+	<div class="btn btn-success btn-lg" onclick="pushData()"><a href="student_dashboard.html" style="color: white;">Confirm</a></div>
+    </div>
+</body>
+
+</html>
