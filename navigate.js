@@ -1,14 +1,23 @@
 var deptpage = document.getElementById("dept");
 var yearpage = document.getElementById("year");
-var dept = localStorage.getItem("dept");
+var dept = window.sessionStorage.getItem("dept");
+var deptDB, studentDB;
 
 function setDept(dept) {
-    localStorage.setItem("dept",dept);
+    window.sessionStorage.setItem("dept",dept);
     deptpage.style.display="none";
     yearpage.style.display="block";
+    deptDB = db.doc(dept)
 }
 
 function setYear(yr) {
-    localStorage.setItem("year",yr);
-    window.location.href="student_form.html";
+    window.sessionStorage.setItem("year",yr);
+    studentDB = deptDB.collection(yr).doc(userName)
+    studentDB.onSnapshot((doc) => {
+	if (doc.data()!=undefined) {
+	    window.location.href="student_dashboard.html";
+	} else {
+	    window.location.href="student_form.html";
+	}
+    })
 }

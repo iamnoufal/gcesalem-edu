@@ -1,20 +1,20 @@
-var database, db, userName, email, year, dept, fatherName, motherName, dob, gender, category, mobNo, religion, age, address, district, state, pinCode;
-userName = localStorage.getItem("userName");
-email = localStorage.getItem("email");
-year = localStorage.getItem("year");
-dept = localStorage.getItem("dept");
-fatherName = localStorage.getItem("fatherName");
-motherName = localStorage.getItem("motherName");
-dob = localStorage.getItem("dob");
-gender = localStorage.getItem("gender");
-category = localStorage.getItem("category");
-mobNo = localStorage.getItem("mobNo");
-religion = localStorage.getItem("religion");
-age = localStorage.getItem("age");
-address = localStorage.getItem("address");
-district = localStorage.getItem("district");
-state = localStorage.getItem("state");
-pinCode = localStorage.getItem("pinCode");
+var database, db, deptDB, studentDB, userName, email, year, dept, fatherName, motherName, dob, gender, category, mobNo, religion, age, address, district, state, pinCode;
+userName = window.sessionStorage.getItem("userName");
+email = window.sessionStorage.getItem("email");
+year = window.sessionStorage.getItem("year");
+dept = window.sessionStorage.getItem("dept");
+fatherName = window.sessionStorage.getItem("fatherName");
+motherName = window.sessionStorage.getItem("motherName");
+dob = window.sessionStorage.getItem("dob");
+gender = window.sessionStorage.getItem("gender");
+category = window.sessionStorage.getItem("category");
+mobNo = window.sessionStorage.getItem("mobNo");
+religion = window.sessionStorage.getItem("religion");
+age = window.sessionStorage.getItem("age");
+address = window.sessionStorage.getItem("address");
+district = window.sessionStorage.getItem("district");
+state = window.sessionStorage.getItem("state");
+pinCode = window.sessionStorage.getItem("pinCode");
 function showDetails() {
 document.getElementById("name").innerHTML=userName;
 document.getElementById("fatherName").innerHTML=fatherName;
@@ -31,14 +31,18 @@ document.getElementById("state").innerHTML=state;
 document.getElementById("pinCode").innerHTML=pinCode;
 }
 database = firebase.firestore()
-db = database.doc("cse/"+userName)
+db = database.collection("students")
+deptDB = db.doc(dept)
+studentDB = deptDB.collection(year).doc(userName)
 
 function pushData() {
-    db.set({
-	name: mobNo,
+    studentDB.set({
+	name: userName,
 	email: email,
 	fatherName: fatherName,
 	motherName: motherName,
+	yesr: year,
+	department: dept,
 	dob: dob,
 	gender: gender,
 	age: age,
@@ -49,5 +53,5 @@ function pushData() {
 	district: district,
 	state: state,
 	pinCode: pinCode
-    })
+    }).then((success) => {window.location.href="student_dashboard.html"})
 }
